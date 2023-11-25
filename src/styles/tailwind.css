@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Blinker:wght@600&family=Josefin+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Kumbh+Sans:wght@400;700&family=Lato:ital,wght@1,300&family=League+Spartan:wght@500;600;700&family=Manrope:wght@400;500&family=Nunito+Sans:opsz,wght@6..12,300;6..12,600;6..12,800&family=Open+Sans:wght@400;700&family=Outfit:wght@400;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700;1,800&family=Roboto:ital,wght@0,500;1,400&family=Rubik:wght@400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply m-0 p-0 box-content;
+}
+
+body,
+html {
+  @apply h-full font-nu;
+}
+
+main {
+  @apply h-full flex flex-col;
+}
+
+header {
+  @apply flex justify-around py-4 border border-b-light-mode-input-dark-gray border-b-3 border-solid;
+}
+
+header h1 {
+  @apply font-nu-800;
+}
+
+.dark-mode {
+  @apply flex space-x-2 justify-center items-center font-nu-600;
+}
+
+.body {
+  @apply bg-light-mode-bg-very-light-gray flex flex-col h-screen relative;
+}
+
+.search-field {
+  @apply flex justify-around w-full py-6;
+  position: absolute;
+  z-index: 1;
+}
+
+.drop-down-icon {
+  @apply flex justify-center items-center bg-dark-mode-text-light-mode-elements-white px-2 rounded-lg;
+}
+
+.drop-down {
+  @apply flex flex-col space-y-1;
+}
+
+.drop-icon {
+  @apply text-drop font-light hover:cursor-pointer;
+}
+
+.drop-down-text {
+  @apply bg-dark-mode-text-light-mode-elements-white py-4 rounded-lg pl-2;
+}
