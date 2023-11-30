@@ -18,6 +18,7 @@ export default {
         "light-mode-input-dark-gray": "#858585",
         "light-mode-bg-very-light-gray": "#fafafa",
         "dark-mode-text-light-mode-elements-white": "#ffffff",
+        "paginate":"#2b2eff"
       },
       borderWidth: {
         3: "3px",
@@ -28,4 +29,5 @@ export default {
     },
   },
   plugins: [],
+  darkMode: 'class',
 };
