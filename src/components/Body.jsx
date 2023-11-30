@@ -72,8 +72,9 @@ function search(e){
             <input
               type="search"
               id="default-search"
-              className="max-[639px]:w-[min-w-max] block sm:w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-dark-mode-elements-dark-blue dark:text-light-mode-bg-very-light-gray"
+              className="block sm:w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-dark-mode-elements-dark-blue dark:text-light-mode-bg-very-light-gray"
               placeholder="Search for a country"
+              size="70"
               required
               onKeyDown={(e) => {
                 search(e);
