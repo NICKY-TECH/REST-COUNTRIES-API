@@ -6,6 +6,7 @@
 
 * {
   @apply m-0 p-0 box-content;
+  border: 2px red solid;
   
 }
 
@@ -39,7 +40,7 @@ header h1 {
 }
 
 .body {
-  @apply bg-light-mode-bg-very-light-gray flex flex-col h-full relative  dark:bg-dark-mode-bg-very-dark-blue pb-3 px-2 max-[639px]:min-w-min  ;
+  @apply bg-light-mode-bg-very-light-gray flex flex-col h-full relative  dark:bg-dark-mode-bg-very-dark-blue pb-3 px-2 max-[639px]:min-w-min max-[639px]:h-screen ;
 }
 
 .search-field {

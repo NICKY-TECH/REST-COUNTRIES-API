@@ -20,8 +20,9 @@ function Body() {
   const dispatch = useDispatch();
   const { data } = useFetch("https://restcountries.com/v3.1/all");
   console.log("before using the flat function");
+  const arr2=[]
   console.log(data);
-  let arr = data.flat();
+  let arr = arr2.flat();
   console.log("data");
   console.log(...data);
 
@@ -71,7 +72,7 @@ function search(e){
             <input
               type="search"
               id="default-search"
-              className="max-[639px]:w-11/12 block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-dark-mode-elements-dark-blue dark:text-light-mode-bg-very-light-gray"
+              className="max-[639px]:w-[min-w-max] block sm:w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-dark-mode-elements-dark-blue dark:text-light-mode-bg-very-light-gray"
               placeholder="Search for a country"
               required
               onKeyDown={(e) => {
