@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 const useFetch = (url) => {
-
 const [data,setData] = useState([])
 const [pending, isPending]=useState(false)
   useEffect(() => {
@@ -20,7 +19,7 @@ const [pending, isPending]=useState(false)
  
     })
   }, [url]);
- return {data,pending} 
+ return {data} 
 };
 
 export default useFetch;

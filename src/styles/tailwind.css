@@ -11,7 +11,7 @@
 
 body,
 html {
-  @apply h-full font-nu;
+  @apply h-full font-nu max-[639px]:min-w-min  ;
 }
 
 html{
@@ -39,7 +39,7 @@ header h1 {
 }
 
 .body {
-  @apply bg-light-mode-bg-very-light-gray flex flex-col h-full relative  dark:bg-dark-mode-bg-very-dark-blue pb-3 px-2;
+  @apply bg-light-mode-bg-very-light-gray flex flex-col h-full relative  dark:bg-dark-mode-bg-very-dark-blue pb-3 px-2 max-[639px]:min-w-min  ;
 }
 
 .search-field {

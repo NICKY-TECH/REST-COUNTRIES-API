@@ -3,7 +3,7 @@ import ReactPaginate from "react-paginate";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/es/hooks/useSelector";
-import { useState} from "react";
+import { useState } from "react";
 import { display } from "../features/dropdown";
 import useFetch from "../hooks/useFetch";
 import Countries from "./Countries";
@@ -19,17 +19,26 @@ function Body() {
 
   const dispatch = useDispatch();
   const { data } = useFetch("https://restcountries.com/v3.1/all");
-  console.log('before using the flat function')
-  console.log(data)
+  console.log("before using the flat function");
+  console.log(data);
   let arr = data.flat();
   console.log("data");
   console.log(...data);
 
-  const changePage=({selected})=>{
-    setPage(selected)
+  const changePage = ({ selected }) => {
+    setPage(selected);
+  };
+
+function search(e){
+  
+  if(e.key==="Enter"){
+   e.preventDefault();
+    console.log(e)
   }
 
-  const pageCount =Math.ceil(arr.length/dataPage)
+  }
+
+  const pageCount = Math.ceil(arr.length / dataPage);
 
   return (
     <article className="body">
@@ -65,6 +74,9 @@ function Body() {
               className="max-[639px]:w-11/12 block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-dark-mode-elements-dark-blue dark:text-light-mode-bg-very-light-gray"
               placeholder="Search for a country"
               required
+              onKeyDown={(e) => {
+                search(e);
+              }}
             />
           </div>
         </form>
@@ -81,11 +93,11 @@ function Body() {
           </div>
           {drop ? (
             <ul className="drop-down-text max-[639px]:w-11/12 border-b-dark-mode-elements-dark-blue border-b-2 max-[639px]:ml-5">
-            <List item ="Africa"/>
-            <List item ="America"/>
-            <List item ="Asia"/>
-            <List item ="Europe"/>
-            <List item ="Oceania"/>
+              <List item="Africa" />
+              <List item="America" />
+              <List item="Asia" />
+              <List item="Europe" />
+              <List item="Oceania" />
             </ul>
           ) : (
             ""
@@ -97,25 +109,24 @@ function Body() {
           {console.dir(data)}
           {console.log("arr")}
           {arr.slice(pagesVisited, pagesVisited + dataPage).map((country) => {
-    return (
-      <>
-        <Countries
-          name={country.name.common}
-          flag={country.flags.png}
-          population={country.population}
-          region={country.region}
-          capital={country.capital}
-          key={country.name.common}
-        />
-      </>
-    );
-  })}
-          
+            return (
+              <>
+                <Countries
+                  name={country.name.common}
+                  flag={country.flags.png}
+                  population={country.population}
+                  region={country.region}
+                  capital={country.capital}
+                  key={country.name.common}
+                />
+              </>
+            );
+          })}
         </div>
       </section>
-      { arr.length!==0 &&
+      {arr.length !== 0 && (
         <ReactPaginate
-        containerClassName={"pagination-container"}
+          containerClassName={"pagination-container"}
           previousLabel={"previous"}
           nextLabel={"next"}
           pageRangeDisplayed={5}
@@ -123,13 +134,16 @@ function Body() {
           activeClassName={"active-btn"}
           onPageChange={changePage}
         />
-      }
-      {     console.log(data)}
-      {console.log('arrrrrrrrrrrr')}
-      {
-   
-        arr.length===0?<p className="text-center font-bold text-stone-400 text-3xl">Please, wait Data is being Fetched...</p>:""
-      }
+      )}
+      {console.log(data)}
+      {console.log("arrrrrrrrrrrr")}
+      {arr.length === 0 ? (
+        <p className="text-center font-bold text-stone-400 text-3xl">
+          Please, wait Data is being Fetched...
+        </p>
+      ) : (
+        ""
+      )}
     </article>
   );
 }
