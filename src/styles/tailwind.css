@@ -11,7 +11,7 @@
 
 body,
 html {
-  @apply h-full font-nu max-[639px]:min-w-min  max-[639px]:dark:border-b-dark-mode-elements-dark-blue ;
+  @apply h-full font-nu max-[639px]:min-w-min  max-[639px]:dark:border-b-dark-mode-elements-dark-blue max-[639px]:h-screen ;
 }
 
 html{

@@ -20,9 +20,8 @@ function Body() {
   const dispatch = useDispatch();
   const { data } = useFetch("https://restcountries.com/v3.1/all");
   console.log("before using the flat function");
-  const arr2=[]
   console.log(data);
-  let arr = arr2.flat();
+  let arr = data.flat();
   console.log("data");
   console.log(...data);
 
