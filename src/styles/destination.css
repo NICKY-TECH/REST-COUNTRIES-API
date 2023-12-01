@@ -1022,7 +1022,6 @@ main{
 @media (max-width: 639px){
 
   main{
-    height: 100vh;
     min-width: -moz-min-content;
     min-width: min-content;
   }
@@ -1094,7 +1093,6 @@ header h1{
 @media (max-width: 639px){
 
   .body{
-    height: 100vh;
     min-width: -moz-min-content;
     min-width: min-content;
   }
@@ -1389,10 +1387,6 @@ header h1{
 
   .max-\[639px\]\:ml-6{
     margin-left: 1.5rem;
-  }
-
-  .max-\[639px\]\:h-screen{
-    height: 100vh;
   }
 
   .max-\[639px\]\:w-11\/12{
