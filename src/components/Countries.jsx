@@ -1,7 +1,7 @@
 import "../styles/destination.css";
 
 function Countries(props) {
-    return <div className="country-cont"> 
+    return <div className="country-cont hover:cursor-pointer"> 
   <div className="flag">
 <img src={props.flag} style={{ height:"120px"}}/>
   </div>
