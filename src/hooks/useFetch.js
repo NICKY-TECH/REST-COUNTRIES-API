@@ -2,14 +2,19 @@ import { useEffect, useState } from "react";
 
 const useFetch = (url) => {
 const [data,setData] = useState([])
-const [pending, isPending]=useState(false)
+console.log("hook")
+console.log(data)
   useEffect(() => {
     fetch(url).then((dat) => {
-      console.log('within custom hook')
   return dat.json()
     }).then((result)=>{
-        setData((value)=>[...value,result])
-        isPending(true)   
+      if ("message" in result && result.message==="Not Found") {
+        setData((value)=>[...value.slice(0,value.length-1),["nothing"]])
+     
+      }else{
+        setData((value)=>[...value.slice(0,value.length-1),result])
+      }
+  
      
 
     }).catch((err)=>{
@@ -18,7 +23,7 @@ const [pending, isPending]=useState(false)
     console.dir(err)
  
     })
-  }, [url]);
+  },[url]);
  return {data} 
 };
 

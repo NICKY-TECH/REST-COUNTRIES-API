@@ -994,6 +994,12 @@ html{
   font-family: Nunito Sans;
 }
 
+:is(.dark body),:is(.dark 
+html){
+  --tw-bg-opacity: 1;
+  background-color: rgb(33 45 56 / var(--tw-bg-opacity));
+}
+
 @media (max-width: 639px){
 
   body,
@@ -1393,6 +1399,10 @@ header h1{
     width: 91.666667%;
   }
 
+  .max-\[639px\]\:w-full{
+    width: 100%;
+  }
+
   .max-\[639px\]\:min-w-min{
     min-width: -moz-min-content;
     min-width: min-content;
@@ -1413,8 +1423,8 @@ header h1{
     top: 70px;
   }
 
-  .sm\:w-full{
-    width: 100%;
+  .sm\:w-4\/5{
+    width: 80%;
   }
 
   .sm\:grid-cols-4{

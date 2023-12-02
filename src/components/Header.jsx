@@ -6,8 +6,6 @@ import { FaMoon } from "react-icons/fa";
 
 function Header() {
   const darkValue = useSelector((state) => state.dark.value);
-  console.log("header")
-  console.log(darkValue)
   const disptach = useDispatch()
   return (
     <header>

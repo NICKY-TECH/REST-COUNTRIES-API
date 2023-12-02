@@ -10,32 +10,30 @@ import Countries from "./Countries";
 import List from "./List";
 function Body() {
   const drop = useSelector((state) => state.drop.value);
-  {
-    console.log(drop);
-  }
   const [pageNumber, setPage] = useState(0);
+  const [url, setUrl] = useState("https://restcountries.com/v3.1/all");
   const dataPage = 8;
   const pagesVisited = pageNumber * dataPage;
-
   const dispatch = useDispatch();
-  const { data } = useFetch("https://restcountries.com/v3.1/all");
-  console.log("before using the flat function");
-  console.log(data);
+  const { data } = useFetch(url);
   let arr = data.flat();
-  console.log("data");
-  console.log(...data);
+
+  const searchDrop = (e) => {
+    if (e.target.nodeName === "LI") {
+      setUrl(`https://restcountries.com/v3.1/region/${e.target.innerHTML}`);
+    }
+  };
 
   const changePage = ({ selected }) => {
     setPage(selected);
   };
 
-function search(e){
-  
-  if(e.key==="Enter"){
-   e.preventDefault();
-    console.log(e)
-  }
-
+  function search(e) {
+    if (e.key === "Enter") {
+      console.log(e);
+      setUrl(`https://restcountries.com/v3.1/name/${e.target.value}`);
+      e.preventDefault();
+    }
   }
 
   const pageCount = Math.ceil(arr.length / dataPage);
@@ -71,9 +69,8 @@ function search(e){
             <input
               type="search"
               id="default-search"
-              className="block sm:w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-dark-mode-elements-dark-blue dark:text-light-mode-bg-very-light-gray"
+              className="block max-[639px]:w-full sm:w-4/5 p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-dark-mode-elements-dark-blue dark:text-light-mode-bg-very-light-gray"
               placeholder="Search for a country"
-              size="70"
               required
               onKeyDown={(e) => {
                 search(e);
@@ -93,7 +90,12 @@ function search(e){
             />{" "}
           </div>
           {drop ? (
-            <ul className="drop-down-text max-[639px]:w-11/12 border-b-dark-mode-elements-dark-blue border-b-2 max-[639px]:ml-5">
+            <ul
+              className="drop-down-text max-[639px]:w-11/12 border-b-dark-mode-elements-dark-blue border-b-2 max-[639px]:ml-5"
+              onClick={(e) => {
+                searchDrop(e);
+              }}
+            >
               <List item="Africa" />
               <List item="America" />
               <List item="Asia" />
@@ -106,26 +108,28 @@ function search(e){
         </div>
       </section>
       <section className="countries-container">
-        <div className="inner-container">
-          {console.dir(data)}
-          {console.log("arr")}
-          {arr.slice(pagesVisited, pagesVisited + dataPage).map((country) => {
-            return (
-              <>
-                <Countries
-                  name={country.name.common}
-                  flag={country.flags.png}
-                  population={country.population}
-                  region={country.region}
-                  capital={country.capital}
-                  key={country.name.common}
-                />
-              </>
-            );
-          })}
-        </div>
+       {
+       arr.length!=0 && arr[0]!="nothing" ? <div className="inner-container">
+          {(
+            arr.slice(pagesVisited, pagesVisited + dataPage).map((country) => {
+              return (
+                <>
+                  <Countries
+                    name={country.name.common}
+                    flag={country.flags.png}
+                    population={country.population}
+                    region={country.region}
+                    capital={country.capital}
+                    key={country.name.common}
+                  />
+                </>
+              );
+            })
+          ) }
+        </div>:<p className="text-center font-bold text-stone-400 text-3xl">Country not found</p>
+       }
       </section>
-      {arr.length !== 0 && (
+      {arr.length !== 0 && arr[0]!="nothing"? (
         <ReactPaginate
           containerClassName={"pagination-container"}
           previousLabel={"previous"}
@@ -135,10 +139,8 @@ function search(e){
           activeClassName={"active-btn"}
           onPageChange={changePage}
         />
-      )}
-      {console.log(data)}
-      {console.log("arrrrrrrrrrrr")}
-      {arr.length === 0 ? (
+      ):""}
+      {arr[0]!="nothing" && arr.length===0 ? (
         <p className="text-center font-bold text-stone-400 text-3xl">
           Please, wait Data is being Fetched...
         </p>
