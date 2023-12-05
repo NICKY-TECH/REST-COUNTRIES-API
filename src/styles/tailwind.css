@@ -45,10 +45,11 @@ header h1 {
 
 .search-field {
   @apply row-span-1 flex max-[639px]:flex-col justify-between w-full py-6 max-[639px]:space-y-5;
+  background-color: aqua;
 }
 
 .search-field form {
-  @apply sm:ml-5 max-[639px]:mx-auto;
+  @apply sm:ml-5 max-[639px]:mx-auto
 }
 
 .search-field form input {
