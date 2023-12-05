@@ -142,7 +142,7 @@ function Body() {
           onPageChange={changePage}
         />
       ):""}
-      {arr[0]!="nothing" && arr.length===0 ? (
+      {arr[0]!="nothing" && arr.length!=0 ? (
         <p className="text-center font-bold text-stone-400 text-3xl">
           Please, wait Data is being Fetched...
         </p>
