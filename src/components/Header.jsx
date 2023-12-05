@@ -4,6 +4,7 @@ import { FaRegMoon } from "react-icons/fa";
 import { darkMode } from "../features/darkmode";
 import { FaMoon } from "react-icons/fa";
 function Header() {
+  localStorage.clear()
   const darkValue = useSelector((state) => state.dark.value);
   const disptach = useDispatch()
   function darkModeCharger(){
