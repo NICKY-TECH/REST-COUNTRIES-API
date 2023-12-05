@@ -6,7 +6,7 @@ const navigate = useNavigate()
 
   
     return <div className="country-cont hover:cursor-pointer" onClick={()=>{
-      navigate(`/countries/${props.name}`)
+      navigate(`/${props.name}`)
     }}> 
   <div className="flag">
 <img src={props.flag} style={{ height:"120px"}}/>
