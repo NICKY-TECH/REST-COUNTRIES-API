@@ -48,7 +48,7 @@ header h1 {
 }
 
 .search-field form {
-  @apply sm:ml-5;
+  @apply sm:ml-5 max-[639px]:mx-auto;
 }
 
 .search-field form input {
