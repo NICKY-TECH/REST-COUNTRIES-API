@@ -9,6 +9,7 @@ function Header() {
   function darkModeCharger(){
     localStorage.setItem("theme",`${darkValue}`);
     if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.querySelector('html').classList.remove('bg-light-mode-bg-very-light-gray');
       document.querySelector('html').classList.add('dark', 'bg-dark-mode-bg-very-dark-blue');
   } else {
       document.querySelector('html').classList.remove('dark', 'bg-dark-mode-bg-very-dark-blue');
