@@ -10,15 +10,15 @@
 
 body,
 html {
-  @apply h-full font-nu max-[639px]:min-w-min dark:bg-dark-mode-bg-very-dark-blue;
+  @apply h-full font-nu max-[639px]:min-w-min ;
 }
 
-html {
+/* html {
   @apply dark:bg-dark-mode-bg-very-dark-blue;
-}
+} */
 
-main {
-  @apply h-full flex flex-col max-[639px]:min-w-min  dark:bg-dark-mode-bg-very-dark-blue;
+.main {
+  @apply h-full flex flex-col max-[639px]:min-w-min dark:bg-dark-mode-bg-very-dark-blue bg-light-mode-bg-very-light-gray;
 }
 
 header {
@@ -124,7 +124,9 @@ header h1 {
 }
 
 .single-container {
-  @apply flex flex-col px-4 space-y-10 dark:bg-dark-mode-bg-very-dark-blue max-[639px]:min-h-min sm:h-full;
+  @apply flex flex-col px-4 space-y-10 
+  bg-light-mode-bg-very-light-gray
+  dark:bg-dark-mode-bg-very-dark-blue max-[639px]:min-h-min sm:h-full;
 }
 
 .back{

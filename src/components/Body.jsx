@@ -18,7 +18,6 @@ function Body() {
   const dispatch = useDispatch();
   const { data } = useFetch(url);
   let arr = data.flat();
-  localStorage.setItem("theme",`${darkValue}`)
 
   const searchDrop = (e) => {
     if (e.target.nodeName === "LI") {
@@ -35,7 +34,8 @@ function Body() {
     if (e.key === "Enter") {
       e.preventDefault();
       console.log(e);
-      setUrl(`https://restcountries.com/v3.1/name/${e.target.value}`);
+      const value = e.target.value.replace(/[^a-zA-Z0-9]/g, '1')
+      setUrl(`https://restcountries.com/v3.1/name/${value}`);
     }
   }
 
@@ -116,7 +116,7 @@ function Body() {
           {(
             arr.slice(pagesVisited, pagesVisited + dataPage).map((country) => {
               return (
-                <>
+                <div key={country.name.common}>
                   <Countries
                     name={country.name.common}
                     flag={country.flags.png}
@@ -125,7 +125,7 @@ function Body() {
                     capital={country.capital}
                     key={country.name.common}
                   />
-                </>
+                </div>
               );
             })
           ) }

@@ -12,7 +12,7 @@ function Main() {
   console.log("main")
   console.log(darkValue)
   return (
-    <main  className={darkValue ?"dark h-full":"h-full" } >
+    <main  className="main" >
       <Header />
       <Outlet/>    
     </main>
