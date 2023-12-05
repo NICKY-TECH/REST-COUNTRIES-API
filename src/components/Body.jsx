@@ -128,7 +128,8 @@ function Body() {
               );
             })
           ) }
-        </div>:<p className="text-center font-bold text-stone-400 text-3xl">Country not found</p>
+        </div>: arr.length!=0 && arr[0]=="nothing"?<p className="text-center font-bold text-stone-400 text-3xl">Country not found</p>:""
+        
        }
       </section>
       {arr.length !== 0 && arr[0]!="nothing"? (
@@ -142,7 +143,7 @@ function Body() {
           onPageChange={changePage}
         />
       ):""}
-      {arr[0]!="nothing" && arr.length!=0 ? (
+      {arr[0]!="nothing" && arr.length===0 ? (
         <p className="text-center font-bold text-stone-400 text-3xl">
           Please, wait Data is being Fetched...
         </p>
