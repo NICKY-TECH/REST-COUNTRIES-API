@@ -12,9 +12,8 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Main />}>
-        <Route path="/" element={<Body />} >
+        <Route path="/" element={<Body />} />
         <Route path=":id" element={<Single />} loader={singleLoader} />
-        </Route>
       </Route>
     )
   );
