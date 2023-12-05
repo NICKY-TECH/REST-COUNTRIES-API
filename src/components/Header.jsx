@@ -5,6 +5,7 @@ import { darkMode } from "../features/darkmode";
 import { FaMoon } from "react-icons/fa";
 function Header() {
   const darkValue = useSelector((state) => state.dark.value);
+  localStorage.setItem("theme",`${darkValue}`);
   const disptach = useDispatch()
   function darkModeCharger(){
     localStorage.setItem("theme",`${darkValue}`);
