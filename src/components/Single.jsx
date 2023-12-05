@@ -28,8 +28,6 @@ let languages =Object.entries(arr[0].languages).map(([key, value]) => {
     return { key, value };
   }); 
 
-    console.log('currencies');
-    console.log(arr)
 return(
     <article className="single-container"> 
 <div className="back">
@@ -62,7 +60,7 @@ return(
     <p>Top Level Domain: <span>{arr[0].tld}</span></p>
     <p>Currencies:<span>{currency[0].value.name}</span></p>
     <p className="languages">Languages: &nbsp; <span>
-        {languages.map((item,index)=>{
+        {languages.slice(0,3).map((item,index)=>{
             if (index !== languages.length-1) {
  return <span>{item.value},&nbsp;</span>
 }else{
@@ -78,7 +76,7 @@ return(
 <div className="border-countries">
   {
     borders?<span className="border-title">Border Countries:&nbsp; {
-  arr[0].borders.map((item)=>{
+  arr[0].borders.slice(0,4).map((item)=>{
    return <span> 
     {item}
     </span>

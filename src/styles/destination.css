@@ -704,6 +704,10 @@ video {
 .w-full{
   width: 100%;
 }
+.min-w-fit{
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
 .min-w-max{
   min-width: -moz-max-content;
   min-width: max-content;
@@ -719,6 +723,9 @@ video {
 .max-w-min{
   max-width: -moz-min-content;
   max-width: min-content;
+}
+.flex-shrink{
+  flex-shrink: 1;
 }
 .flex-grow{
   flex-grow: 1;
@@ -975,6 +982,10 @@ video {
 .p-5{
   padding: 1.25rem;
 }
+.px-1{
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
 .px-10{
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -1143,6 +1154,8 @@ video {
 body,
 html{
   height: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 250 250 / var(--tw-bg-opacity));
   font-family: Nunito Sans;
 }
 
@@ -1162,6 +1175,7 @@ html{
 .main{
   display: flex;
   height: 100%;
+  width: 100%;
   flex-direction: column;
   --tw-bg-opacity: 1;
   background-color: rgb(250 250 250 / var(--tw-bg-opacity));
@@ -1665,6 +1679,7 @@ header h1{
 .border-countries{
   margin-top: 1.25rem;
   display: flex;
+  flex-shrink: 1;
   align-items: center;
 }
 
@@ -1721,6 +1736,8 @@ header h1{
 
 .border-title{
   display: flex;
+  min-width: -moz-min-content;
+  min-width: min-content;
   justify-content: center;
 }
 
@@ -1732,11 +1749,13 @@ header h1{
 }
 
 .border-title span{
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(227 227 227 / var(--tw-border-opacity));
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
 }

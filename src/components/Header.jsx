@@ -9,23 +9,25 @@ function Header() {
   function darkModeCharger(){
     localStorage.setItem("theme",`${darkValue}`);
     if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.querySelector('html').classList.add('dark');
+      document.querySelector('html').classList.add('dark', 'bg-dark-mode-bg-very-dark-blue');
   } else {
-      document.querySelector('html').classList.remove('dark');
+      document.querySelector('html').classList.remove('dark', 'bg-dark-mode-bg-very-dark-blue');
+      document.querySelector('html').classList.add('bg-light-mode-bg-very-light-gray');
   }
-  console.log("js file")
-  console.log(localStorage.getItem("theme"))
+
   }
-  {console.log(darkValue)}
+
  
   return (
     <header>
       <h1>Where in the world?</h1>
+      {console.log('theme')}
+      {console.log(darkValue)}
       <div className="dark-mode hover:cursor-pointer "  onClick={()=>{
 disptach(darkMode(darkValue==="light"?"dark":"light"));
 darkModeCharger();
 }}>
-{ darkValue ==="dark"?
+{ darkValue ==="light"?
   <FaMoon />:
 <FaRegMoon/>
 

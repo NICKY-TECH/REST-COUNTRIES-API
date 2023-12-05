@@ -10,7 +10,7 @@
 
 body,
 html {
-  @apply h-full font-nu max-[639px]:min-w-min ;
+  @apply h-full font-nu max-[639px]:min-w-min bg-light-mode-bg-very-light-gray;
 }
 
 /* html {
@@ -18,7 +18,7 @@ html {
 } */
 
 .main {
-  @apply h-full flex flex-col max-[639px]:min-w-min dark:bg-dark-mode-bg-very-dark-blue bg-light-mode-bg-very-light-gray;
+  @apply h-full flex flex-col max-[639px]:min-w-min w-full dark:bg-dark-mode-bg-very-dark-blue bg-light-mode-bg-very-light-gray;
 }
 
 header {
@@ -172,7 +172,7 @@ header h1 {
 }
 
 .border-countries{
-  @apply space-x-7 mt-5 flex items-center;
+  @apply space-x-7 mt-5 flex items-center flex flex-shrink;
 }
 
 
@@ -192,11 +192,11 @@ header h1 {
 
 
 .border-title{
-  @apply flex space-x-7 justify-center;
+  @apply flex space-x-7 justify-center min-w-min;
 }
 
 .border-title span{
-  @apply border border-underline px-4 py-[0.2rem]   dark:border-[#2B3743] dark:border-3 ;
+  @apply border border-underline px-1 py-[0.2rem] min-w-fit  dark:border-[#2B3743] dark:border-3 ;
 }
 
 h3{

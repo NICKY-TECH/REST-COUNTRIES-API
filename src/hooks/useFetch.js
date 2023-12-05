@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 
 const useFetch = (url) => {
 const [data,setData] = useState([])
-console.log("hook")
-console.log(data)
   useEffect(() => {
     fetch(url).then((dat) => {
   return dat.json()
@@ -20,7 +18,6 @@ console.log(data)
     }).catch((err)=>{
     console.log(err.TypeError)
     console.log(err)
-    console.dir(err)
  
     })
   },[url]);

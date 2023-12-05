@@ -33,7 +33,6 @@ function Body() {
   function search(e) {
     if (e.key === "Enter") {
       e.preventDefault();
-      console.log(e);
       const value = e.target.value.replace(/[^a-zA-Z0-9]/g, '1')
       setUrl(`https://restcountries.com/v3.1/name/${value}`);
     }

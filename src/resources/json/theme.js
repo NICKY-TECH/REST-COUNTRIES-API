@@ -3,5 +3,3 @@ if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && w
 } else {
     document.querySelector('html').classList.remove('dark');
 }
-console.log("js file")
-console.log(localStorage.getItem("theme"))
