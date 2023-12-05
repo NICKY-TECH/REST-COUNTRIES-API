@@ -18,7 +18,8 @@ export default {
         "light-mode-input-dark-gray": "#858585",
         "light-mode-bg-very-light-gray": "#fafafa",
         "dark-mode-text-light-mode-elements-white": "#ffffff",
-        "paginate":"#2b2eff"
+        "paginate":"#2b2eff",
+        "underline":"#E3E3E3"
       },
       borderWidth: {
         3: "3px",

@@ -10,6 +10,7 @@ import Countries from "./Countries";
 import List from "./List";
 function Body() {
   const drop = useSelector((state) => state.drop.value);
+  const darkValue = useSelector((state) => state.dark.value);
   const [pageNumber, setPage] = useState(0);
   const [url, setUrl] = useState("https://restcountries.com/v3.1/all");
   const dataPage = 8;
@@ -17,9 +18,11 @@ function Body() {
   const dispatch = useDispatch();
   const { data } = useFetch(url);
   let arr = data.flat();
+  localStorage.setItem("theme",`${darkValue}`)
 
   const searchDrop = (e) => {
     if (e.target.nodeName === "LI") {
+      dispatch(display());
       setUrl(`https://restcountries.com/v3.1/region/${e.target.innerHTML}`);
     }
   };
@@ -30,9 +33,9 @@ function Body() {
 
   function search(e) {
     if (e.key === "Enter") {
+      e.preventDefault();
       console.log(e);
       setUrl(`https://restcountries.com/v3.1/name/${e.target.value}`);
-      e.preventDefault();
     }
   }
 
@@ -69,7 +72,7 @@ function Body() {
             <input
               type="search"
               id="default-search"
-              className="block max-[639px]:w-full sm:w-4/5 p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-dark-mode-elements-dark-blue dark:text-light-mode-bg-very-light-gray"
+              className=" sm:p-4 sm:w-4/5   sm:ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-dark-mode-elements-dark-blue dark:text-light-mode-bg-very-light-gray"
               placeholder="Search for a country"
               required
               onKeyDown={(e) => {

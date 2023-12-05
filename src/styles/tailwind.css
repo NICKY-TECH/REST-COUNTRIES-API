@@ -6,7 +6,6 @@
 
 * {
   @apply m-0 p-0 box-content;
-  
 }
 
 body,
@@ -14,8 +13,8 @@ html {
   @apply h-full font-nu max-[639px]:min-w-min dark:bg-dark-mode-bg-very-dark-blue;
 }
 
-html{
-@apply  dark:bg-dark-mode-bg-very-dark-blue
+html {
+  @apply dark:bg-dark-mode-bg-very-dark-blue;
 }
 
 main {
@@ -23,10 +22,12 @@ main {
 }
 
 header {
-  @apply flex justify-between py-4 border border-b-light-mode-input-dark-gray border-b-3 border-solid dark:border-b-dark-mode-elements-dark-blue dark:text-white;
+  @apply flex justify-between py-4 border border-underline border-b-3 border-solid  
+  dark:border-[#2B3743]
+  dark:text-white dark:bg-dark-mode-bg-very-dark-blue;
 }
 
-.moon{
+.moon {
   @apply text-white;
 }
 
@@ -39,7 +40,7 @@ header h1 {
 }
 
 .body {
-  @apply bg-light-mode-bg-very-light-gray flex flex-col h-full relative  dark:bg-dark-mode-bg-very-dark-blue pb-3 px-2 max-[639px]:min-w-min  ;
+  @apply bg-light-mode-bg-very-light-gray flex flex-col relative  dark:bg-dark-mode-bg-very-dark-blue pb-3 px-2 max-[639px]:min-w-min min-h-min;
 }
 
 .search-field {
@@ -48,6 +49,10 @@ header h1 {
 
 .search-field form {
   @apply sm:ml-5;
+}
+
+.search-field form input {
+  @apply max-[639px]:py-4 max-[639px]:ps-[30px];
 }
 
 .drop-down-icon {
@@ -67,8 +72,8 @@ header h1 {
   dark:bg-dark-mode-bg-very-dark-blue;
 }
 
-.drop-down-text li{
-  @apply hover:cursor-pointer
+.drop-down-text li {
+  @apply hover:cursor-pointer;
 }
 
 .countries-container {
@@ -85,16 +90,16 @@ header h1 {
   @apply bg-dark-mode-text-light-mode-elements-white  dark:bg-dark-mode-elements-dark-blue h-max rounded;
 }
 
-.country-cont h2{
+.country-cont h2 {
   @apply dark:text-white font-[600];
 }
 
-.country-cont p{
+.country-cont p {
   @apply font-[300] dark:text-white;
 }
 
-.country-cont p span{
-@apply dark:text-light-mode-input-dark-gray
+.country-cont p span {
+  @apply dark:text-light-mode-input-dark-gray;
 }
 
 .flag {
@@ -106,14 +111,101 @@ header h1 {
 }
 
 .pagination-container {
-  @apply flex  justify-center space-x-4 text-black font-bold ;
+  @apply flex  justify-center space-x-4 text-black font-bold;
   z-index: 0;
 }
 
-.pagination-container a{
+.pagination-container a {
   @apply border-2 border-paginate rounded w-6/12 px-2 py-1 dark:text-white dark:bg-dark-mode-elements-dark-blue;
 }
 
-.active-btn{
+.active-btn {
   @apply bg-paginate text-white h-full;
 }
+
+.single-container {
+  @apply flex flex-col px-4 space-y-10 dark:bg-dark-mode-bg-very-dark-blue max-[639px]:min-h-min sm:h-full;
+}
+
+.back{
+  @apply pt-7
+}
+
+.inner-section-single-info {
+  @apply flex max-[639px]:flex-col sm:flex-row gap-11 max-[639px]:space-y-6 ;
+}
+
+.top-dl{
+  @apply sm:ml-auto
+}
+
+.flag-section{
+  @apply sm:w-[40%] flex flex-grow
+}
+
+.section-one-country-details{
+  @apply w-full space-y-4;
+}
+
+.flag-section img{
+  @apply w-full;
+  height:inherit;
+}
+
+.text-section {
+  @apply flex flex-col w-[70%] px-10 py-5 max-[639px]:space-y-3 items-center;
+}
+
+.section-one-and-two{
+  @apply flex w-full justify-between;
+}
+
+.center-the-text-for-single-page{
+  @apply w-[70%] h-auto;
+}
+
+.single-container-inner {
+  @apply flex max-[639px]:flex-col sm:flex-row w-full justify-around
+  max-[639px]:space-y-8 sm:space-x-6;
+}
+
+.border-countries{
+  @apply space-x-7 mt-5 flex items-center;
+}
+
+
+.languages{
+  @apply flex
+}
+
+.back-btn{
+  @apply flex space-x-7 justify-center items-center border border-underline px-6 py-2   dark:border-[#2B3743] dark:border-3 dark:text-light-mode-input-dark-gray;
+  box-shadow: -17px -40px 36px -27px #E3E3E3;
+  
+}
+
+/* .single-name{
+  @apply sm:mt-6;
+} */
+
+
+.border-title{
+  @apply flex space-x-7 justify-center;
+}
+
+.border-title span{
+  @apply border border-underline px-4 py-[0.2rem]   dark:border-[#2B3743] dark:border-3 ;
+}
+
+h3{
+  @apply font-nu-800 text-lg dark:text-white; 
+}
+
+.section-one-and-two p,.border-title{
+  @apply font-nu-600 dark:text-white;
+}
+
+.section-one-and-two p span,.border-title span{
+  @apply font-nu-300 dark:text-light-mode-input-dark-gray;
+}
+
