@@ -11,9 +11,10 @@ import Single, { singleLoader } from "./components/Single";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/countries" element={<Main />}>
-        <Route index element={<Body />} />
+      <Route path="/" element={<Main />}>
+        <Route path="countries" element={<Body />} >
         <Route path=":id" element={<Single />} loader={singleLoader} />
+        </Route>
       </Route>
     )
   );
