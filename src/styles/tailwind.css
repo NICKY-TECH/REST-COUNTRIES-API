@@ -163,7 +163,7 @@ header h1 {
 }
 
 .center-the-text-for-single-page{
-  @apply w-[70%] h-auto;
+  @apply sm:w-[70%] h-auto;
 }
 
 .single-container-inner {
