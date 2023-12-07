@@ -3,11 +3,16 @@ import "../styles/destination.css";
 import { FaRegMoon } from "react-icons/fa";
 import { darkMode } from "../features/darkmode";
 import { FaMoon } from "react-icons/fa";
+import { useEffect } from "react";
 function Header() {
   localStorage.clear()
   const darkValue = useSelector((state) => state.dark.value);
   const disptach = useDispatch()
-  function darkModeCharger(){
+  // if(localStorage.getItem('theme')===null){
+  //       localStorage.setItem("theme",`${darkValue}`);
+  // }
+
+  useEffect(()=>{
     localStorage.setItem("theme",`${darkValue}`);
     if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.querySelector('html').classList.remove('bg-light-mode-bg-very-light-gray');
@@ -17,7 +22,8 @@ function Header() {
       document.querySelector('html').classList.add('bg-light-mode-bg-very-light-gray');
   }
 
-  }
+  })
+
 
  
   return (
@@ -27,11 +33,10 @@ function Header() {
       {console.log(darkValue)}
       <div className="dark-mode hover:cursor-pointer "  onClick={()=>{
 disptach(darkMode(darkValue==="light"?"dark":"light"));
-darkModeCharger();
 }}>
 { darkValue ==="light"?
-  <FaMoon />:
-<FaRegMoon/>
+<FaRegMoon/>:
+<FaMoon />
 
 }
 

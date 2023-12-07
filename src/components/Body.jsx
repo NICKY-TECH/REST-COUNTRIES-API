@@ -10,7 +10,6 @@ import Countries from "./Countries";
 import List from "./List";
 function Body() {
   const drop = useSelector((state) => state.drop.value);
-  const darkValue = useSelector((state) => state.dark.value);
   const [pageNumber, setPage] = useState(0);
   const [url, setUrl] = useState("https://restcountries.com/v3.1/all");
   const dataPage = 8;
