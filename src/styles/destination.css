@@ -1292,6 +1292,7 @@ header h1{
   .search-field form{
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
   }
 }
 
@@ -1305,6 +1306,7 @@ header h1{
 @media (max-width: 639px){
 
   .search-field form input{
+    width: 89%;
     padding-top: 1rem;
     padding-bottom: 1rem;
     padding-inline-start: 30px;
@@ -1499,10 +1501,8 @@ header h1{
   border-width: 2px;
   --tw-border-opacity: 1;
   border-color: rgb(43 46 255 / var(--tw-border-opacity));
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 :is(.dark .pagination-container a){
@@ -1513,7 +1513,8 @@ header h1{
 }
 
 .active-btn{
-  height: 100%;
+  height: -moz-max-content;
+  height: max-content;
   --tw-bg-opacity: 1;
   background-color: rgb(43 46 255 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
@@ -1646,7 +1647,13 @@ header h1{
 
 .center-the-text-for-single-page{
   height: auto;
-  width: 70%;
+}
+
+@media (min-width: 640px){
+
+  .center-the-text-for-single-page{
+    width: 70%;
+  }
 }
 
 .single-container-inner{
@@ -1871,6 +1878,10 @@ h3{
     width: 91.666667%;
   }
 
+  .max-\[639px\]\:w-\[89\%\]{
+    width: 89%;
+  }
+
   .max-\[639px\]\:min-w-min{
     min-width: -moz-min-content;
     min-width: min-content;
@@ -1932,6 +1943,10 @@ h3{
 
   .sm\:w-\[40\%\]{
     width: 40%;
+  }
+
+  .sm\:w-\[70\%\]{
+    width: 70%;
   }
 
   .sm\:grid-cols-4{
